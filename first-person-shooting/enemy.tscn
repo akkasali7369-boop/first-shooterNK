@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://5w4euuypcif3"]
+
+[ext_resource type="Script" uid="uid://dra8rg0tr6yhu" path="res://enemy.gd" id="1_7k104"]
+[ext_resource type="PackedScene" uid="uid://dhx10b7tw02f1" path="res://assets/Model/characterMedium.fbx" id="2_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://c48107vn5ayw5" path="res://assets/Skins/Source/criminalMaleA.svg" id="3_epg4t"]
+[ext_resource type="AnimationLibrary" uid="uid://d0wu1axw1f5i0" path="res://assets/Animations/idle.fbx" id="3_iifgy"]
+[ext_resource type="AnimationLibrary" uid="uid://rsuvqynj4xk1" path="res://assets/Animations/run.fbx" id="4_epg4t"]
+[ext_resource type="AudioStream" uid="uid://43r3wskp8uf3" path="res://assets/Audio/impactPunch_medium_000.ogg" id="6_wujgv"]
+[ext_resource type="AudioStream" uid="uid://chjbubfgv2raw" path="res://assets/Audio/explosionCrunch_000.ogg" id="7_hb8ge"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4kxuq"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_154bo"]
+albedo_texture = ExtResource("3_epg4t")
+
+[node name="Enemy" type="CharacterBody3D" unique_id=260034259]
+script = ExtResource("1_7k104")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1097423657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_4kxuq")
+
+[node name="characterMedium" parent="." unique_id=1973329917 instance=ExtResource("2_4gyqm")]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 0, 0)
+
+[node name="Skeleton3D" parent="characterMedium/Root" parent_id_path=PackedInt32Array(1973329917, 313945668) index="0" unique_id=1688016659]
+bones/0/position = Vector3(0.0018387488, 0.0072011794, 0.006477501)
+bones/0/rotation = Quaternion(0.1000741, -0.69998956, -0.1000742, 0.69998926)
+bones/1/rotation = Quaternion(-0.507439, 0.50815195, -0.49198478, -0.49217713)
+bones/2/rotation = Quaternion(0.015585037, -0.0020640627, 0.9946271, -0.10232174)
+bones/3/rotation = Quaternion(0.94612885, -0.021870958, 0.07550286, -0.31410387)
+bones/5/rotation = Quaternion(0.50000006, 0.49999994, -0.49999988, 0.5000001)
+bones/7/position = Vector3(-0.0061795823, -0.005867009, 0.0012811619)
+bones/7/rotation = Quaternion(-0.70710695, 9.415693e-08, 0.7071066, 9.4157e-08)
+bones/9/position = Vector3(-0.0018470897, -0.0044547734, 0.002064415)
+bones/9/rotation = Quaternion(-0.49999994, -0.5000001, 0.5000002, 0.49999988)
+bones/10/rotation = Quaternion(-0.5992656, 0.3942915, -0.5867668, -0.37565932)
+bones/11/rotation = Quaternion(0.01582647, 0.0011685352, 0.99462336, 0.10233614)
+bones/12/rotation = Quaternion(0.9481119, 0.011444977, -0.044092946, -0.31465647)
+bones/14/rotation = Quaternion(0.3847505, 0.59326816, -0.38475037, 0.59326833)
+bones/16/position = Vector3(-0.006179584, -0.0048164506, -0.0018944681)
+bones/16/rotation = Quaternion(-0.70710695, 9.415693e-08, 0.7071066, 9.4157e-08)
+bones/18/position = Vector3(-5.4567005e-05, -0.00024301039, 0.014758754)
+bones/18/rotation = Quaternion(0.0098251, 0.7070369, -0.70703834, 0.009956635)
+bones/19/rotation = Quaternion(9.301444e-05, -2.6648374e-07, 0.999999, 0.0014431665)
+bones/20/rotation = Quaternion(0.0970708, -6.9272904e-10, -1.4135584e-08, 0.9952775)
+bones/21/rotation = Quaternion(0.011894642, 9.99934e-09, 1.1040932e-08, 0.99992925)
+bones/22/rotation = Quaternion(0.049165785, -3.8279617e-13, -1.8956675e-14, 0.9987906)
+bones/23/rotation = Quaternion(0.07661575, -2.5414742e-13, -3.625577e-12, 0.9970607)
+bones/24/rotation = Quaternion(-0.23040035, -0.0029512434, -0.01219272, 0.9730151)
+bones/26/rotation = Quaternion(0.5868819, 0.4106535, 0.5482946, -0.43163225)
+bones/27/rotation = Quaternion(-0.19635332, 0.541855, -0.39860752, 0.71340775)
+bones/28/rotation = Quaternion(0.7658031, -0.16652685, -0.18745111, 0.5921796)
+bones/29/rotation = Quaternion(-0.015085469, 0.7243595, -0.03158, 0.68853354)
+bones/31/rotation = Quaternion(0.7160408, 0.046869874, -0.00562457, 0.6964605)
+bones/32/rotation = Quaternion(0.41093537, -0.027859448, 0.012505442, 0.91115296)
+bones/34/rotation = Quaternion(-0.20212212, 0.7017286, 0.3565596, 0.5827426)
+bones/35/rotation = Quaternion(0.3956746, -0.031024838, 0.046305973, 0.9166978)
+bones/37/rotation = Quaternion(0.6583795, -0.5076112, 0.45999345, 0.31188676)
+bones/38/rotation = Quaternion(0.0028539244, 0.9066808, 0.40139174, -0.12963967)
+bones/39/rotation = Quaternion(-0.114437275, -0.09238569, 0.10785819, 0.98322713)
+bones/40/rotation = Quaternion(-0.010813457, 0.1092944, -0.033285607, 0.9933932)
+bones/42/rotation = Quaternion(-0.81118643, 0.039263137, 0.0063708834, 0.5834334)
+bones/43/rotation = Quaternion(-0.030973794, -0.030523026, -0.0008921914, 0.99905366)
+bones/45/rotation = Quaternion(-0.2317005, 0.80165285, -0.34581512, -0.4290449)
+bones/46/rotation = Quaternion(-0.39722016, 0.007768823, 0.17114542, 0.9015903)
+bones/48/rotation = Quaternion(0.9857111, 0.021217179, 0.091551244, -0.13979228)
+bones/49/rotation = Quaternion(0.5292489, 0.027083548, 0.19758944, 0.82469416)
+bones/50/rotation = Quaternion(-0.23854512, -0.11003764, -0.17040853, 0.9497099)
+bones/51/rotation = Quaternion(-0.01981986, 0.95228636, -0.29825485, 0.061659325)
+bones/53/rotation = Quaternion(0.9223173, -0.08511363, -0.10383923, 0.36235878)
+bones/54/rotation = Quaternion(0.35941443, 0.010718047, -0.15306263, 0.9204773)
+bones/55/rotation = Quaternion(-0.62103987, 0.12048486, 0.15385176, 0.75902736)
+bones/56/rotation = Quaternion(0.028262626, 0.9539409, -0.29757366, -0.025452439)
+
+[node name="characterMedium" parent="characterMedium/Root/Skeleton3D" index="0" unique_id=1766014352]
+surface_material_override/0 = SubResource("StandardMaterial3D_154bo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="characterMedium" unique_id=259680882]
+libraries/idle = ExtResource("3_iifgy")
+libraries/run = ExtResource("4_epg4t")
+
+[node name="HitSound" type="AudioStreamPlayer3D" parent="." unique_id=1877301986]
+stream = ExtResource("6_wujgv")
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="." unique_id=1960651069]
+stream = ExtResource("7_hb8ge")
+
+[editable path="characterMedium"]

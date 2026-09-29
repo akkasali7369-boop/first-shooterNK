@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://kc4nvn1r4c8m"]
+
+[ext_resource type="Script" uid="uid://djujf620xypwi" path="res://ammo_pickup.gd" id="1_fs8dk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4kxuq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mti6b"]
+albedo_color = Color(0.9490196, 0.7607843, 0.1882353, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4kxuq"]
+material = SubResource("StandardMaterial3D_mti6b")
+size = Vector3(0.3, 0.2, 0.5)
+
+[node name="AmmoPickup" type="Area3D" unique_id=1771855259]
+script = ExtResource("1_fs8dk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1885600684]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_4kxuq")
+
+[node name="Model" type="MeshInstance3D" parent="." unique_id=1517166269]
+mesh = SubResource("BoxMesh_4kxuq")
